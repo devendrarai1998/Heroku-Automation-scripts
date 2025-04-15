@@ -21,6 +21,8 @@ public class BrokenImages {
 
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/img[2]")).click();
 
+        //*[@id="content"]/div/img[1]
+
         driver.quit();
         System.out.println("Windows was closed after completing the operation");
     }

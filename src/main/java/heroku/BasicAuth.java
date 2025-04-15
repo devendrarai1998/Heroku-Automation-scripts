@@ -7,21 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BasicAuth {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
-        System.out.println("heroku Site is opening");
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        System.out.println("Basic Auth page opened");
 
-        //Gets the title of the site
-        System.out.println(driver.getTitle());
+        // You can now interact with the page post-authentication if needed
+        String bodyText = driver.findElement(By.tagName("p")).getText();
+        System.out.println("Body text: " + bodyText);
 
-        //takes you to basic auth input page
-        driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[3]/a")).click();
-
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("Sign in")).click();
-
-        //Pop page will appear
-
-
+//        driver.quit();
     }
 }
